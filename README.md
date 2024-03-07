@@ -5,16 +5,14 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Contacts](#contacts)
 
 ## Description
 
-Приложение  для публикации альбомов с фотографиями.
+Приложение  для публикации альбомов с фотографиями. Посмотреть можно по ссылке - http://site-images.great-site.net
 
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://jquery.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-original.svg" height="40px" width="40px" /></a><a href="https://www.php.net/docs.php"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" height="40px" width="40px" /></a>
@@ -22,10 +20,6 @@
 ## Getting Started
 
 Приложение для публикации альбомов с фотографиями. Реализована регистрация и вход пользователя. Добавление комментариев, лайков. Реализовано добавление, удаление и редактирование альбомов
-
-### Prerequisites
-
-Для установки потребуется Apache и Mysql
 
 ### Installation
 
