@@ -27,13 +27,6 @@
 Загрузить все файлы на сервер в папку "htdocs"
 В корне найти файл ini.php и отредактировать данные для подключения к базе данных
 
-аккаунты для теста:
-login  | password
--------------------
-qwe    | 123
-admin  | admin
-root   | 123
-
 ## Contacts
 
 <a href="https://www.linkedin.com/in/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:kol9di4@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>
