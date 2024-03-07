@@ -1,8 +1,9 @@
 $(function(){
+    //функция входа в систему
     log = function(data)
     {
         $.ajax({
-            url: "core/ajax-helper/login.php", // Здесь указываем URL-адрес серверного обработчика
+            url: "core/ajax-helper/login.php", 
             type: "post",
             data: data,
             success: function (response) {
@@ -15,12 +16,10 @@ $(function(){
                     $('.log button[type=submit]').after('<div class="h6 text-danger">Неверный логин или пароль!</div>');
                 }
             },
-            error: function (error) {
-              // Обработка ошибок при отправке данных
-              console.error("Ошибка при отправке данных: ", error);
-            },
+            error: function (error) {},
           });
     }
+    //отправка формы логина
     $('.log').on('submit',function(e){
         e.preventDefault();
         const data = {
@@ -29,7 +28,7 @@ $(function(){
           };
         log(data);
     })
-    // Register form validation
+    // валидация и отправка формы регистрации
     $('.reg').on('submit',function(e){
         e.preventDefault();
         var email = $('.reg input[name="email"]');
@@ -97,7 +96,7 @@ $(function(){
                 password: $('.reg input[name=password]').val()
             };
             $.ajax({
-                url: "core/ajax-helper/register.php", // Здесь указываем URL-адрес серверного обработчика
+                url: "core/ajax-helper/register.php", 
                 type: "post",
                 data: data,
                 success: function (response) {
@@ -117,10 +116,10 @@ $(function(){
             });
         }
     });
-    // END Reg
+    // выход из системы
     $('#log-out-button').on('click',function(){
         $.ajax({
-            url: "core/ajax-helper/log_out.php", // Здесь указываем URL-адрес серверного обработчика
+            url: "core/ajax-helper/log_out.php",
             type: "post",
             success: function (response) {
                 location. reload();

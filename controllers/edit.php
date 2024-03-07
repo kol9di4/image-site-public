@@ -7,9 +7,9 @@ $hasImgs = $imagesInAlbum !==false;
 $pageContent = '';
 $imagesCard = '';
 $album = albumInfo($id);
-$id_user = $_SESSION['user_id']??0;
+$idUser = $_SESSION['user_id']??0;
 
-if($hasImgs && (int)$album['id_user']===(int)$id_user){
+if($hasImgs && (int)$album['id_user']===(int)$idUser){
 	foreach ($imagesInAlbum as $image)
 	{
 		$imagesCard .= template('views/edit/v_image', [

@@ -4,6 +4,7 @@ $(function(){
             $(elem).find('div.h5 span').html(i+1);
         });
     }
+    //добавление карточки для загрузки новой картинки
     $('#add-image-edit').on('click',function(){
         var newBlock = $('.card-image#hide-card-image').first().clone();
         newBlock.appendTo('#images-block');
@@ -13,6 +14,7 @@ $(function(){
         cardNumeration();
         $("html, body").scrollTop($(document).height());
     })
+    //редактирование альбома, картинок, загрузка новых картинок
     $('#form-edit-album').on('submit',function(e){
         e.preventDefault();
         var valid = true;
@@ -33,7 +35,9 @@ $(function(){
                 album_description: album_description,
                 id_album: album_id
             }
+            //изменение альбома
             $.post('core/ajax-helper/edit_album.php', data_album, function (data){});
+            //изменение картинок
             $('.card-image.old').each(function(){
                 var image_name = $(this).find('input[name=image-name]').val();
                 var image_description = $(this).find('textarea[name=image-description]').val();
@@ -52,6 +56,7 @@ $(function(){
                 });
                 
             })
+            //загрузка новых картинок
             $('.card-image.new').each(function(){
                 var image_name = $(this).find('input[name=image-name]').val();
                 var image_description = $(this).find('textarea[name=image-description]').val();
@@ -70,11 +75,20 @@ $(function(){
                     success: function (data) {}
                 });  
             })
+            //перенаправление на просмотр альбома
             $(document).ajaxStop(function() {
                 window.location.replace("index.php?c=album&id_album="+album_id);
             });
         }
     })
+    //удаление карточки новой картинки
+    $('body').on('click','#form-edit-album .card-image.new .btn-close',function(){
+        $(this).parents('.card-image.new').hide('slow', function(){
+            $(this).remove();
+            cardNumeration();
+        });
+    })
+    //удаление картинок из альбома при нажатии на крестик
     $('body').on('click','#form-edit-album .card-image.old .btn-close',function(){
         if($('.card-image.old').length>1){
             data_delete_image = {
@@ -87,6 +101,7 @@ $(function(){
             });
         }
     })
+    //удаление альбома
     $('body').on('click','#delete-album',function(){
         data_delete_album = {
             id_album: $(document).find('#form-edit-album').data('album-id')

@@ -49,7 +49,7 @@
                         </div>
                         <!-- end comment -->
                         <div class="comment-new">
-                        <?if($id_user!==0):?>
+                        <?if($idUser!==0):?>
                             <form id="new-comment-form" data-id="<?=$image['id_image']?>">
                                 <h5>Добавить новый комментарий:</h5>
                                 <textarea class="container-fluid" data-id="<?=$image['id_image']?>" name="text-comment" id="comment-text" rows="5"></textarea>

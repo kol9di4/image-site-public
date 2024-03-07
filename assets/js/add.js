@@ -1,10 +1,12 @@
 $(function(){
+    //нумерация карточек картинок
     function cardNumeration(){
         $('.card-image').each(function(i,elem) {
             $(elem).find('div.h5 span').html(i+1);
         });
     }
     cardNumeration();
+    //добавление новой карточки картинки
     $('#add-image').on('click',function(){
         var newBlock = $('.card-image').first().clone();
         newBlock.appendTo('#images-block');
@@ -12,7 +14,8 @@ $(function(){
         cardNumeration();
         $("html, body").scrollTop($(document).height());
     })
-    $('body').on('click','.btn-close',function(){
+    //удаление карточки картинки
+    $('body').on('click','#form-add-album .btn-close',function(){
         if($('.card-image').length>1){
             $(this).parents('.card-image').hide('slow', function(){
                 $(this).remove();
@@ -20,6 +23,7 @@ $(function(){
             });
         }
     })
+    //валидация файлов в форме
     $('body').on('click','input[type=file]',function(){
         $(this).fileValidator({
             onValidation: function(files){
@@ -32,6 +36,7 @@ $(function(){
             type:         'image' 
         });
     })
+    //валидация и отправление формы
     $('#form-add-album').on('submit',function(e){
         e.preventDefault();
         var valid = true;

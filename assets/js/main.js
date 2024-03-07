@@ -1,4 +1,5 @@
 $(function(){
+  //добавление нового комментария
   $('main').on('click','#new-comment-form button',function(e){
         e.preventDefault();
         var id_image=$(this).data('id');
@@ -22,10 +23,7 @@ $(function(){
                 $('.modal').scrollTop($(".modal").scrollHeight);
               }, 'json');
             },
-            error: function (error) {
-              // Обработка ошибок при отправке данных
-              console.error("Ошибка при отправке данных: ", error);
-            },
+            error: function (error) {},
           });
         }
         $('.comment-again button').on('click',function(){
@@ -34,6 +32,7 @@ $(function(){
           $('.modal').scrollTop($(".modal").scrollHeight);
         })
   });
+  //добавление лайка
   $('button.like').on('click',function(){
       var idImage = $(this).data('id-image');
       var likeType = $(this).data('type-like');
@@ -41,6 +40,7 @@ $(function(){
         idImage: idImage,
         likeType: likeType
       };
+    //добавление лайка и обновление данных на странице
     $.post('core/ajax-helper/like_add.php', data, function(response) {
       $("button.like[data-id-image="+idImage+"]").removeClass('btn-success');
       $("button.like[data-id-image="+idImage+"]").removeClass('btn-danger');
@@ -64,7 +64,4 @@ $(function(){
       $("button.like[data-id-image="+idImage+"][data-type-like=1]").children('span').html(response['like']);
     }, 'json');
   });
-  $('#idAlbum').on('click',function(){
-    
-  })
 })

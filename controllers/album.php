@@ -5,7 +5,7 @@ $id = $_GET['id_album'];
 $imagesInAlbum = imagesInAlbum($id);
 $hasImgs = $imagesInAlbum != null;
 $pageContent = '';
-$id_user = $_SESSION['user_id']??0;
+$idUser = $_SESSION['user_id']??0;
 
 if($hasImgs){
 	foreach ($imagesInAlbum as $image)
@@ -14,7 +14,7 @@ if($hasImgs){
 		$pageContent .= template('views/image/v_modal', [
 			'image' => $image,
 			'comments' => $comments,
-			'id_user' => $id_user
+			'idUser' => $idUser
 		]); 
 	}
 	$album = albumInfo($id);
@@ -22,7 +22,7 @@ if($hasImgs){
 		'imagesInAlbum' => $imagesInAlbum,
 		'id'=>$id,
 		'album'=>$album,
-		'id_user'=>$id_user
+		'idUser'=>$idUser
 	]);
 	$pageTitle = albumName($id);
 }

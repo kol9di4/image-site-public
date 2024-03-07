@@ -2,12 +2,11 @@
 include_once('../../init.php');
 
 
-$file_arr = $_FILES;
-$text_arr = $_POST;
+$texArr = $_POST;
 
-$image_fields = [
-    'image_name_text' => $text_arr['image_name_text'],
-    'image_description' => $text_arr['image_description'],
-    'id_image' => $text_arr['id_image']
+$imageFields = [
+    'image_name_text' => $textArr['image_name_text'],
+    'image_description' => $textArr['image_description'],
+    'id_image' => $textArr['id_image']
 ];
-imageUpdate($image_fields);
+imageUpdate($imageFields);
