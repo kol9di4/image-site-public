@@ -5,7 +5,6 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
