@@ -9,7 +9,6 @@
 - [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Contacts](#contacts)
 
@@ -23,10 +22,6 @@
 ## Getting Started
 
 Приложение для публикации альбомов с фотографиями. Реализована регистрация и вход пользователя. Добавление комментариев, лайков. Реализовано добавление, удаление и редактирование альбомов
-
-### Prerequisites
-
-Для установки потребуется Apache и Mysql
 
 ### Installation
 
